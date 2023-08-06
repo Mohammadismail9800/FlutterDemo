@@ -11,7 +11,7 @@ Future<List<Post>> fetchPost() async {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
     return parsed.map<Post>((json) => Post.fromMap(json)).toList();
   } else {
-    throw Exception('Failed to load album');
+    throw Exception('Failed to load Data');
   }
 }
 
