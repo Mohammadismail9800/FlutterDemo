@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'menue.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,6 +15,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    var email = "abc@gmail.com";
+    var password = "abc";
     return Scaffold(
       body: Container(
         constraints: const BoxConstraints.expand(),
@@ -79,12 +81,12 @@ class _LoginState extends State<Login> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          if (emailController.text == "abc@google.com" &&
-                              passwordController.text == "abc") {
+                          if (emailController.text == email &&
+                              passwordController.text == password) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyApp(
+                                  builder: (context) => ListViewExampleApp(
                                         email: emailController.text,
                                       )),
                             );
